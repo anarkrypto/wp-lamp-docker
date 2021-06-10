@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  wp-lamp:
+    build:
+      context: . # Build Dockerfile from current directory
+      args: 
+        # from .env file
+        - DB_NAME
+        - DB_USER
+        - DB_PASSWD 
+    container_name: wp-lamp
+    image: anarkrypto/wp-lamp-docker
+    restart: unless-stopped
+    ports:
+      - 8081:80 # Maps the default Apache port (80) in the container to port 8081 on the machine.
