@@ -31,13 +31,12 @@ a2enmod rewrite
 # Remove default apache html
 rm /var/www/html/index.html
 
-# Set permissions to public dir
-chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
-
 echo "${yellow}Downloading WordPress${reset}"
 # Download worpress and extract on the fly to public dir
 wget -qO- https://wordpress.org/latest.tar.gz | tar xvz -C /var/www/html --strip-components 1
 
+# Set permissions to public dir
+chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
 echo "${yellow}Installing MySQL server${reset}"
 # Install MySQL server
