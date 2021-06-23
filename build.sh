@@ -17,7 +17,7 @@ verbose='true'
 
 # Check if running as root
 if [ "$EUID" -ne 0 ]
-  then echo "${red}Please run as root: ${reset}${bold}sudo ./install.sh${reset}"
+  then echo "${red}Please run as root: ${reset}${bold}sudo ./build.sh${reset}"
   exit
 fi
 
